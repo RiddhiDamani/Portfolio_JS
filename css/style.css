@@ -637,10 +637,27 @@ img {
 .about-section .timeline .timeline-item-inner {
     padding: 30px;
     border-radius: 5px;
+    position: relative;
 }
 
 .about-section .timeline .timeline-item-inner .icon {
     height: 40px;
     width: 40px;
-    background-color: red;
+    /* background-color: red; */
+    border: 1px solid var(--bg-black-100);
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    font-size: 16px;
+    color: var(--skin-color);
+    top: 18px;
+    border-radius: 50%;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd) .icon {
+    right: -70px;
+}
+
+.about-section .timeline .timeline-item:nth-child(even) .icon {
+    left: -70px;
 }
