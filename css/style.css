@@ -655,7 +655,8 @@ img {
 }
 
 .about-section .timeline .timeline-item:nth-child(odd) .icon {
-    right: -70px;
+    right: -60px;
+
 }
 
 .about-section .timeline .timeline-item:nth-child(even) .icon {
