@@ -1,5 +1,10 @@
 /* ------------------ About Section Tabs -----------------  */
 (() => {
-    console.log("Hello World");
+    const aboutSection = document.querySelector(".about-section");
+    tabsContainer = document.querySelector(".about-tabs");
+
+    tabsContainer.addEventListener("click", (event) => {
+        console.log(event.target);
+    })
 })();
-console.log('hi');
+
