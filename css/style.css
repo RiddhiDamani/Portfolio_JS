@@ -805,3 +805,19 @@ img {
     margin:0;
     line-height: 26px;
 }
+
+/*-----------------
+    Portfolio Section 
+-------------------*/
+
+.portfolio-section {
+    padding: 80px 0 80px;
+    min-height: 100vh;
+}
+
+.portfolio-section .portfolio-filter {
+    background-color: red;
+    padding: 0 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
