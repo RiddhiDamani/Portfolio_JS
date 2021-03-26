@@ -8,7 +8,15 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
   <!-- main css -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- default color skin -->
   <link rel="stylesheet" type="text/css" href="css/skins/color-1.css">
+  <!-- style switcher - for demo purposes only -->
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1" href="css/skins/color-1.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2" href="css/skins/color-2.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3" href="css/skins/color-3.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4" href="css/skins/color-4.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" href="css/skins/color-5.css" disabled>
+  <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
 </head>
 <body>
 <!-- header start -->
@@ -115,7 +123,7 @@
           ✧  Check out my GitHub here: https://github.com/RiddhiDamani </p>
         </p>
         <a href="Riddhi_Damani.pdf" class="button-1 outer-shadow hover-in-shadow">Download CV</a>
-        <a href="#contactgit " class="link-item button-1 outer-shadow hover-in-shadow">Hire Me</a>
+        <a href="#contact" class="link-item button-1 outer-shadow hover-in-shadow">Hire Me</a>
       </div>
     </div>
     <!-- About Tabs Start-->
@@ -777,6 +785,26 @@
   </div>
 </div>
 <!-- Portfolio popup end-->
+
+<!-- Style switcher start - for demo purposes only -->
+<div class="style-switcher outer-shadow">
+  <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+    <i class="fas fa-cog fa-spin"></i>
+  </div>
+  <div class="day-night s-icon outer-shadow hover-in-shadow">
+    <i class="fas"></i>
+  </div>
+  
+  <h4>Theme Colors</h4>
+  <div class="colors">
+    <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+    <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+    <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+    <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+    <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+  </div>
+</div>
+<!-- Style switcher end -->
 <!-- main js -->
 <script src="js/main.js"></script>
 <!-- style switcher js -->

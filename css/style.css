@@ -20,6 +20,14 @@
     --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
     --inner-shadow-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8;
 }
+
+/* Override custom css variables for dark theme */ 
+body.dark {
+     --bg-black-900: #ffffff;
+     --bg-black-100: #353535;
+     --bg-black-50: #2b2c2f;
+}
+
 body {
     font-size: 16px;
     line-height: 1.5;
