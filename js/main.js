@@ -1,3 +1,61 @@
+/* ------------------ Navigation Menu -----------------  */
+
+(() => {
+    const hamburgerBtn = document.querySelector(".hamburger-btn"),
+    navMenu = document.querySelector(".nav-menu"),
+    closeNavBtn = navMenu.querySelector(".close-nav-menu");
+    
+    hamburgerBtn.addEventListener("click",showNavMenu);
+    closeNavBtn.addEventListener("click",hideNavMenu);
+    
+    
+    function showNavMenu() {
+        navMenu.classList.add("open");
+        bodyScrollingToggle();
+    }
+
+    function hideNavMenu() {
+        navMenu.classList.remove("open");
+        fadeOutEffect();
+        bodyScrollingToggle();
+    }
+
+    function fadeOutEffect() {
+        document.querySelector(".fade-out-effect").classList.add("active");
+        setTimeout(() => {
+            document.querySelector(".fade-out-effect").classList.remove("active");
+        }, 300)
+    }
+
+    // Attach an event handler to document 
+    document.addEventListener("click", (event) => {
+        //console.log(event);
+        if(event.target.classList.contains('link-item')) {
+            //console.log(event.target.hash);
+            /* Make sure event.target.hash has a value before overiding default behavior */
+            if(event.target.hash !== "") {
+                // prevent default anchor click behavior
+                event.preventDefault();
+                const hash = event.tagrte.hash;
+                // deactivate existing active section
+                document.querySelector(".section.active").classList.add("hide");
+                document.querySelector(".section.active").classList.remove("active");
+                // activate new 'section'
+                document.querySelector(hash).classList.add("active");
+                document.querySelector(hash).classList.remove("hide");
+                // deactivate exisiting active navigation menu 'link-item'
+                navMenu.querySelector(".active").classList.add("outer-shadow","hover-in-shadow");
+                navMenu.querySelector(".active").classList.remove("active","inner-shadow");
+                // activate new navigation menu 'link-item'
+                event.target.classList.add("active","inner-shadow");
+                event.target.classList.remove("outer-shadow","hover-in-shadow");
+            }
+        }
+      
+    })
+
+})();
+
 /* ------------------ About Section Tabs -----------------  */
 (() => {
     const aboutSection = document.querySelector(".about-section");
@@ -234,4 +292,15 @@ function bodyScrollingToggle () {
         sliderContainer.style.marginLeft = - (slideWidth * slideIndex) + "px";
     }
     slider();
+})();
+
+/* ------------------ Hide all Sections except the active section -----------------  */
+(() => {
+    const sections = document.querySelectorAll(".section");
+    //console.log(sections);
+    sections.forEach((section) => {
+        if(!section.classList.contains("active")) {
+            section.classList.add("hide");
+        }
+    })
 })();
