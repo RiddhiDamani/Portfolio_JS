@@ -36,7 +36,7 @@
             if(event.target.hash !== "") {
                 // prevent default anchor click behavior
                 event.preventDefault();
-                const hash = event.tagrte.hash;
+                const hash = event.target.hash;
                 // deactivate existing active section
                 document.querySelector(".section.active").classList.add("hide");
                 document.querySelector(".section.active").classList.remove("active");
@@ -46,9 +46,30 @@
                 // deactivate exisiting active navigation menu 'link-item'
                 navMenu.querySelector(".active").classList.add("outer-shadow","hover-in-shadow");
                 navMenu.querySelector(".active").classList.remove("active","inner-shadow");
-                // activate new navigation menu 'link-item'
-                event.target.classList.add("active","inner-shadow");
-                event.target.classList.remove("outer-shadow","hover-in-shadow");
+                
+                // if clicked 'link-item is contained within the navigation'
+                if(navMenu.classList.contains("open")) {
+                    // activate new navigation menu 'link-item'
+                    event.target.classList.add("active","inner-shadow");
+                    event.target.classList.remove("outer-shadow","hover-in-shadow");
+                    // hide navigation menu
+                    hideNavMenu();
+                    //console.log("clicked 'link-item is contained within the navigation menu'");
+                }
+                else {
+                    //console.log("clicked 'link-item is not contained within the navigation menu'");
+                    let navItems = navMenu.querySelectorAll(".link-item");
+                    navItems.forEach((item) => {
+                        if(hash === item.hash) {
+                            // activate new navigation menu 'link-item'
+                            item.classList.add("active","inner-shadow");
+                            item.classList.remove("outer-shadow", "hover-in-shadow");
+                        }
+                    })
+                fadeOutEffect();
+                }
+                // add hash (#) to URL
+                window.location.hash = hash;
             }
         }
       
