@@ -720,27 +720,28 @@
     </div>
     <div class="row">
       <div class="contact-form">
-        <form>
+        <form action="https://formspree.io/f/xlearaon" method="POST">
           <div class="row">
             <div class="w-50">
               <div class="input-group outer-shadow hover-in-shadow">
-                <input type = "text" placeholder="Name" class="input-control">
+                <input type = "text" id="firstname" name="firstname" placeholder="Name" class="input-control">
               </div>
               <div class="input-group outer-shadow hover-in-shadow">
-                <input type = "text" placeholder="Email" class="input-control">
+                <input type = "text" id="lastname" name="lastname" placeholder="Email" class="input-control">
               </div>
               <div class="input-group outer-shadow hover-in-shadow">
-                <input type = "text" placeholder="Subject" class="input-control">
+                <input type = "text" id="subject" name="subject" placeholder="Subject" class="input-control">
               </div>
             </div>
             <div class="w-50">
               <div class="input-group outer-shadow hover-in-shadow">
-                <textarea class="input-control" placeholder="Message"></textarea>
+                <textarea class="input-control" id="message" name="message" placeholder="Message"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="submit-btn">
+              <div class="status" id="status"></div>
               <button type="submit" class="button-1 outer-shadow hover-in-shadow">Send Message</button>
             </div>
           </div>
