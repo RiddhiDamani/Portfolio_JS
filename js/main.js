@@ -349,9 +349,11 @@ async function handleSubmit(event) {
         'Accept': 'application/json'
     }
   }).then(response => {
+    status.classList.add("Success");
     status.innerHTML = "Thanks for your submission!";
     form.reset()
   }).catch(error => {
+    status.classList.add("Error");
     status.innerHTML = "Oops! There was a problem submitting your form"
   });
 }
