@@ -1497,13 +1497,13 @@ img {
 
 #status.success {
     background-color: rgb(211, 250, 153);
-    /* animation: status 10s ease forwards; */
+    animation: status 10s ease forwards;
 }
 
 #status.error {
     background-color: rgb(240, 85, 38);
     color: white;
-    /* animation: status 10s ease forwards; */
+    animation: status 10s ease forwards;
 }
 
 @keyframes status{
